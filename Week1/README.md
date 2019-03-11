@@ -1,6 +1,39 @@
 # Browser Technologies - Week 1
 //Progressive Enhancement
 
+## feature research
+
+We had to do research to two features that websites use, remove them, to see how the websites will work after removing them.
+
+I did the research on cookies and custom fonts.
+
+### Cookies
+Since the new privacy law, cookies are a must have on most of the websites that store data from their users. The user has to have the ability to accept or decline the cookies used by the website. But how do those website's work if you just turn the cookies off?
+
+###### Dorhoutmees.nl
+Is the website of my old workplace. I never actually looked at the website before so it was nice to give it a test.
+
+Things that stand out:
+The cookie-bar that was installed on the website didn't have a decline option. The only option was an "oke" button so you would automatically accept.
+
+After turning off the cookies the online chat was no longer there. The rest of the website was still working correctly and you could still navigate through the pages. After checking the cookies again I saw that still after reloading the website there were still new cookies installed. These were from an external web analytics website.
+
+Solution:
+Actually give the user the possibility to decline the cookies and then actually don't still force the cookies to the user.  
+
+###### Bol.com
+One of the biggest webshop's in the netherlands with a lot of products.
+
+Things that stand out:
+The things that stood out the most was that, after turning off the cookies, a big message appeared at the top of the page. The message tells the user that you can browse through the products but can't add or buy them because then the cookies are needed. I think that is kind of strange because what information is that important that a user MUST have them turned on. The only data I can think of is the products that you put in your basket.
+
+Solution:
+Maybe add the products that the user wants to the local storage so it is still possible to buy stuff without accepting the cookies.
+
+### Custom fonts
+
+
+
 
 Maandag: Introductie van het vak.
 
