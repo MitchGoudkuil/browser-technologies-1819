@@ -1,13 +1,14 @@
 # Browser Technologies - Week 1
 //Progressive Enhancement
 
-## feature research
+## Assignment 1A
+### feature research
 
 We had to do research to two features that websites use, remove them, to see how the websites will work after removing them.
 
 I did the research on cookies and custom fonts.
 
-### Cookies
+#### Cookies
 Since the new privacy law, cookies are a must have on most of the websites that store data from their users. The user has to have the ability to accept or decline the cookies used by the website. But how do those website's work if you just turn the cookies off?
 
 ###### Dorhoutmees.nl
@@ -30,78 +31,41 @@ The things that stood out the most was that, after turning off the cookies, a bi
 Solution:
 Maybe add the products that the user wants to the local storage so it is still possible to buy stuff without accepting the cookies.
 
-### Custom fonts
+## Assignment 1B - Fork the OBA
+I cloned the oba project to this weeks folder and started to look at the 8 features from Assignment 1A. We had to take a look at our project and see what we can improve our progressive enchancement.
 
+##### Turning off images
+After turning the images off i found out that the application is still usable. The only problem was that the booklist, which showed images of the books only, was no longer visible. I also found out that I mostly forget to insert something in the alt tag. Because of this if a blind person would use the website with a screenreader he would get no explanation at all, which is especially bad in the book list.
 
+Fix:
+To solve the problem it would be better to fill in the alt tags and to include the title under the books in the book list.
 
+![booklist](img/lijst.png)
 
-Maandag: Introductie van het vak.
+##### Turn off Custom fonts
+Nothing really happened when I turned the custom fonts off. Some of the parts shifted a bit on the screen but not in a big screw-up way.
 
-College over waarom PE.
+##### Checking for color blindness
+I found out that the contrast is actually not that bad in the application. I think this is because of the limited colors I used which were mostly black white and red. After checking it with all of the possible types of color blindness the contrast stayed the same. Something that could get fixed is that the action buttons are the same as the answer buttons. We could fix this by changing the shape of the buttons.
 
-Briefing opdracht 1A: Breek het web. Uitdelen 2 features per student.
+![colorblindness](img/eyesight.png)
 
-Werkvorm: Samen kijken hoe kun je een features kan testen.
+##### Muis/Trackpad not working
+This a feature I did'nt think about making the application. I used a button tag for the action buttons which could get reached by using "tab" which was good but sadly I used list items as the answers which did not have a tab index. So it's impossible to "tab" through the application if you don't have a mouse or trackpad.
 
-Woensdag: Opdracht 1A in groepen bespreken.
+Fix: To fix this I will have to generate the answers with a tags or button tags. This way it would be possible to use the tab button to go through the application.
 
-College: Samenvatting over hoe je de features kan testen.
+##### Turning off Javascript
+This feature would be really hard to change if the application stayed Clientside rendered. After turning javascript off the whole application would stop working after the first question. This is because the whole application is build around an Api which does a "get" request after the first question.
 
-Weekly Nerd: ICONS: Maike Klip - ontwerpen voor vluchtelingen
+Fix: To fix this the application would need to be rebuild but this time server side rendered. This way I can let the server do the get request and not the client itself.
 
-Briefing opdracht 1B: Fork je OBA - OBAapp testen.
+##### Cookies and local storage
+I combined these two features together because after turning the cookies off the localstorage would also not work anymore.
 
-Werkvorm: Device lab gebruiken voor je OBAapp
+I only used the local storage to store the data from the api. The moment I turn the localstorage off it's no longer possible to manipulate the data after the first question. This automatically makes the application unusable.
 
-
-Vrijdag: Opleveren opdracht 1B.
-Resultaten in groepjes bespreken. Snap je PE?
-
-
-
-## Opdracht 1 - Progressive Enhancement
-//Het web is voor iedereen. Leren over Progressive enhancement
-
-### Opdracht 1A - Breek het Web
-Het Web laten 'breken' door features van het platform bewust uit te zetten. Images, custom fonts, JavaScript, kleur, breedband internet.
-
-#### Doel van deze opdracht
-Met als doel erachter komen dat je misschien aannames hebt die niet kloppen, en om je in te laten leven in de eindgebruiker.
-
-#### Uitleg
-Onderzoek minimaal twee features. Dat betekent uitvogelen wat het voor impact heeft op de sites die je kent en normaal gebruikt. Kies sites in je directe omgeving: van je werkgever, lokale vereniging, de cafetaria om de hoek, en/of eerdere projecten die je zelf gedaan hebt.
-
-1. Afbeeldingen uitzetten
-2. Custom fonts uitzetten
-3. Javascript (volledig)
-4. Kleur uitzetten & kleurenblindheid instellen
-5. Breedband internet uitzetten
-6. Cookies
-8. localStorage doet het niet
-9. Muis/Trackpad werkt niet
-
-a. Wifi hotspots/HTTPS
-b. Content blockers
-c. CDN’s
-d. Ad blockers (privacy)
-
-
-Je krijgt 2 features van de 8
-- Zoek uit welke problemen ze kunnen veroorzaken (verzamel cijfers, meningen, ervaringen)
-- Zoek uit hoe je dit kunt testen (hoe kun je een feature ‘uitzetten’)
-- Vind een aantal sites waar dit ook problemen oplevert (uit je directe omgeving)
-- Beschrijf hoe je dit kan fiksen
-- Maak hierover een presentatie en neem die woensdag mee, dan gaan we de resultaten bespreken
-
-Lezen:
-
-[Everyone has JavaScript, right?](https://kryogenix.org/code/browser/everyonehasjs.html)
-
-[I Turned Off JavaScript and it was Glorious](https://www.wired.com/2015/11/i-turned-off-javascript-for-a-whole-week-and-it-was-glorious/)
-
-https://dev.to/quii/the-web-i-want-43o
-
-
+fix: I think it would be better to store the data not only in the localstorage but also in a global variable. This way if the localstorage is turned off we can still use the data gathered from the api.  
 
 
 ### Opdracht 1B - Fork je OBA
@@ -124,3 +88,5 @@ Beoordelingscriteria
   - een beschrijving van de problemen die je hebt gevonden
   - beschrijf hoe je de problemen hebt opgelost
   - of hoe je dit zou oplossen (met todo’s) als je genoeg tijd en budget zou hebben
+
+## Assignment 1A
