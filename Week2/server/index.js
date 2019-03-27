@@ -14,7 +14,6 @@ let dashboardArray = []
 
 webpush.setVapidDetails('mailto:myclub@soccer.io', publicVapidKey, privateVapidKey)
 
-// app.use(express.static(path.join(__dirname, "client")))
 app.use(express.static(__dirname + '/public'))
 app.use(bodyParser.json())
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts' }))
@@ -82,7 +81,6 @@ app.get('/checkNotification', function(req, res) {
   res.send(data)
 })
 
-
 app.get('/', function(req, res) {
   res.render('team', {
     teamList: teamData.allTeams(),
@@ -105,14 +103,20 @@ app.get('/dashboard', function(req, res) {
   });
 })
 
+let subscription = null;
+
 app.post('/dashboard/team', function(req, res) {
-  const subscription = req.body;
+  subscription = req.body;
   res.status(201).json({})
-
-  const payload = JSON.stringify({ title: 'Myclub'})
-
-  webpush.sendNotification(subscription, payload).catch(err => console.error(err));
 })
+
+setInterval(function(){
+    const payload = JSON.stringify({
+      title: 'Myclub',
+      body: 'The game between Ajax and PSV started'
+  })
+    webpush.sendNotification(subscription, payload).catch(err => console.error(err));
+}, 15000)
 
 app.get('/dashboard/:team', function(req, res) {
   res.render('teampage', {

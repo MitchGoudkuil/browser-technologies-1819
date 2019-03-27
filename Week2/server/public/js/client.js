@@ -1,28 +1,18 @@
 const publicVapidKey = "BHYcGufT3VdwZMzqDWsuqOLAe0OFOJLxrICIgk0WMwSAxQJQIVyVCQm5vwQnPfBhU7aCj7SJr8vW5NfFfpwKR8g"
 
 if ('serviceWorker' in navigator) {
-  setTimeout(function(){
     send().catch(err => console.error(err));
-  },15000)
-  setTimeout(function(){
-    send().catch(err => console.error(err));
-  },35000)
-  setTimeout(function(){
-    send().catch(err => console.error(err));
-  },25000)
 }
 
 async function send() {
-  const register = await navigator.serviceWorker.register('/worker.js', {
-    scope: '/dashboard'
-  })
+  const register = await navigator.serviceWorker.register('/js/worker.js')
 
   const subscription = await register.pushManager.subscribe({
     userVisibleOnly: true,
     applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
   })
 
-  await fetch('/dashboard', {
+  await fetch('/dashboard/team', {
     method: 'POST',
     body: JSON.stringify(subscription),
     headers: {
