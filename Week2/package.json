@@ -1,0 +1,19 @@
+{
+  "name": "week2",
+  "version": "1.0.0",
+  "description": "//Browser Technologies & Feature Detection",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "node-fetch": "^2.3.0",
+    "nodemon": "^1.18.10",
+    "web-push": "^3.3.3"
+  }
+}

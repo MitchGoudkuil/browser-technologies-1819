@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <noscript>
+      <meta http-equiv="refresh" content="5">
+    </noscript>
+  </head>
+  <body>
+    <header>
+      <a href="/dashboard"><img class="logo" src="../img/logo.svg" alt=""></a>
+      {{# if addButton }}<a href="/" class="add-button"><img src="../img/plus-button.svg" alt="">Add team</a>{{/if}}
+    </header>
+
+    <form action="/reset-timer" method="post">
+      <button type="submit" name="button">Reset</button>
+    </form>
+    <main class="content-container">
+        {{{ body }}}
+    </main>
+  </body>
+
+  <script src="./js/client.js"></script>
+
+</html>

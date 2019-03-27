@@ -1,0 +1,14 @@
+<section class="selection-container">
+  <form id="teamselection" action="/dashboard" method="get">
+    <h1>Let's select your favorite team.</h1>
+
+    <select class="" name="team" form="teamselection">
+      <option value=""></option>
+      {{#each teamList }}
+        <option value="{{this.id}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+
+    <button class="button" type="submit">Next</button>
+  </form>
+</section>
