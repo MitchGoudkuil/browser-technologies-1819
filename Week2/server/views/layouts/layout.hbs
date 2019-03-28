@@ -10,13 +10,10 @@
   </head>
   <body>
     <header>
-      <a href="/dashboard"><img class="logo" src="../img/logo.svg" alt=""></a>
+      <a href="/dashboard"><img class="logo" src="../img/logo.svg" alt="Myclub logo"></a>
       {{# if addButton }}<a href="/" class="add-button"><img src="../img/plus-button.svg" alt="">Add team</a>{{/if}}
     </header>
 
-    <form action="/reset-timer" method="post">
-      <button type="submit" name="button">Reset</button>
-    </form>
     <main class="content-container">
         {{{ body }}}
     </main>
