@@ -1,18 +1,17 @@
-<h1 class="dashboard-title">Dashboard</h1>
-
 <article class="notification-live {{ matchStart }}">
   <small class="notification-live__tag">Now playing</small>
-  <p>Ajax 0 - 0 PSV</p>
+  <p>{{ yourTeam.name }} 0 - 0 {{ oponentTeam.name }}</p>
   <p class="notification-live__timer"> {{ timer }}</p>
 </article>
 
+<h1 class="dashboard-title">Dashboard</h1>
 
 <article class="notification ">
   <img src="../img/goal.svg" alt="">
   <div class="notification__info">
     <h2>Goal! </h2>
-    <h4>08:51 - Hakim Zijech</h4>
-    <p>Ajax 1 - 0 PSV</p>
+    <h4>{{ timer }} - Hakim Zijech</h4>
+    <p>{{ yourTeam.name }} 1 - 0 {{ oponentTeam.name }}</p>
   </div>
 </article>
 
@@ -20,18 +19,17 @@
   <img src="../img/start.svg" alt="">
   <div class="notification__info">
     <h2>HALF-TIME!</h2>
-    <h4>The current score between Ajax and PSV</h4>
-    <p>Ajax 1 - 0 PSV</p>
+    <h4>The game between {{ yourTeam.name }} and {{ oponentTeam.name }} paused.</h4>
+    <p>{{ yourTeam.name }} 1 - 0 {{ oponentTeam.name }}</p>
   </div>
 </article>
 
 <section class="team-container">
   {{#each teams }}
     <article class="team-container__card">
-      <button class="team-container__notification" type="button" name="button"><img src="../img/bell.svg" alt=""></button>
-      <img class="team-container__logo" src="{{this.teamLogo}}" alt="">
+      <img class="team-container__logo" src="{{this.teamLogo}}" alt="{{this.name}} logo">
       <h2>{{this.name}}</h2>
-      <a href="/dashboard/{{this.name}}" class="button" type="button" name="button">Bekijk</a>
+      <a href="/dashboard/{{this.name}}" class="button" type="button" name="button">Open {{this.name}}</a>
     </article>
   {{/each}}
 </section>

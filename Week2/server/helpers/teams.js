@@ -31,7 +31,7 @@ function allTeams() {
     {
       id: 6,
       name: "FC Emmen",
-      teamLogo: "../img/teams/"
+      teamLogo: "../img/teams/emmen.png"
     },
     {
       id: 7,
