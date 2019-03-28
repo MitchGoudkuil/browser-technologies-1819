@@ -17,7 +17,9 @@ I want to get a notification if my favorite team scores.
    * Assignment 1A - Break the internet
    * Assignment 1B - Fork the OBA
 * [My Club](#My-club)
-* [Features](#Features)
+* [Progressive enhancement](#Progressive-enhancement)
+* [Features and progressive enhancement](#Features-and-progressive-enhancement)
+* [Feature detection](#Feature-detection)
 
 ### Installation
    ```bash
@@ -101,7 +103,7 @@ I only used the local storage to store the data from the api. The moment I turn 
 fix: I think it would be better to store the data not only in the localstorage but also in a global variable. This way if the localstorage is turned off we can still use the data gathered from the api.  
 </details>
 
-# My club
+## My club
 My club is a website in which a user can add his favorite eredivisie soccer team to the dashboard and will receive notifications when a game starts, his team scores and a game is finished. Using the notification Api the user has to accept notifications to also get notifications when the browser is not used.
 
 ![sketch of the dashboard](/img/sketch.png)
@@ -116,7 +118,7 @@ With css I did the styling so the website would actually look like a dashboard w
 Pleasureable:
 With javascript turned on the notifications on the page itself would turn-up. These notifications have a nicer appeal to the website and actually fit with the styling
 
-# Features and progressive enhancement
+## Features and progressive enhancement
 The basic function and feature that I wanted to accomplish was to be able to send the user an notification with javascript enabled and disabled.
 
 ##### No javascript
@@ -129,7 +131,6 @@ The website is also able to use for blind people. The code is semantically coded
 
 ![dashboard with images](/img/images.png)| ![dashboard without images](/img/noimages.png)
 ---|---
-
 
 ## Feature detection
 With HTML I didn't use tags that were not supported in older browsers. So most of the feature detection was for the Css part.
@@ -146,6 +147,16 @@ To use the push notifications in the browser I had to install a service worker. 
 I wrote down the check in javascript so now the push notification works in all supported brosers.
 ![dashboard with start notification](/img/ifservice.png)
 
-I wanted to make a few more modifications to my application but the whole concept of working with node and express was really new to me so I was not able to actually code some of the features. Anyhow, I still wrote one down so if I ever wanted to add them I could automatically start with writing a fallback.
+I wanted to make a few more modifications to my application but the whole concept of working with node and express was really new to me so I was not able to actually code some of the features. Anyhow, I still wrote one down so if I ever wanted to add it I could automatically start with writing a fallback.
 
 I wanted to add something extra to the form in which the user selects a team. If javascript was turned on I wanted to remove the submit button and when a team was chosen it would automatically add it to the dashboard, and when javascript was turned off the submit button would appear
+
+###After running audits
+![dashboard with start notification](/img/auditi.png)
+After running de audit I was surprised and happy because of the high score.
+
+## To do list
+I wanted to do a lot more to the app, but sadly I did not have enough time to actually do them.
+
+* [ ] Add an actual detail page
+* [ ] Add autocomplete to the team form if javascript is disabled.
