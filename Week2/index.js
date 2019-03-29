@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended:false}))
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/server/views/layouts' }))
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/server/views')
+app.listen(process.env.PORT || 3000)
 
 let timer = 0
 const data = {
@@ -161,5 +162,3 @@ app.get('/dashboard/:team', function(req, res) {
 app.get('*', function(req, res){
   res.render('error');
 });
-
-app.listen(process.env.PORT || 3000)
