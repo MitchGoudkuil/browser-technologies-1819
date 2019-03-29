@@ -5,7 +5,6 @@ const path = require('path')
 const bodyParser = require('body-parser');
 const teamData = require('./server/helpers/teams.js')
 const match = require('./server/helpers/match.js')
-const port = process.env.PORT || 3000;
 const app = express()
 
 const publicVapidKey = "BHYcGufT3VdwZMzqDWsuqOLAe0OFOJLxrICIgk0WMwSAxQJQIVyVCQm5vwQnPfBhU7aCj7SJr8vW5NfFfpwKR8g"
@@ -163,4 +162,4 @@ app.get('*', function(req, res){
   res.render('error');
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(process.env.PORT || 3000)
