@@ -3,8 +3,8 @@ const hbs = require('express-handlebars');
 const webpush = require('web-push');
 const path = require('path')
 const bodyParser = require('body-parser');
-const teamData = require('./helpers/teams.js')
-const match = require('./helpers/match.js')
+const teamData = require('./server/helpers/teams.js')
+const match = require('./server/helpers/match.js')
 const laggard = require('laggard');
 const app = express()
 
@@ -12,12 +12,12 @@ const publicVapidKey = "BHYcGufT3VdwZMzqDWsuqOLAe0OFOJLxrICIgk0WMwSAxQJQIVyVCQm5
 const privateVapidKey = "ewnaYEwAfSsfahrN3VofQIaAEv5gL24U46vlMCwKa6Q"
 webpush.setVapidDetails('mailto:myclub@soccer.io', publicVapidKey, privateVapidKey)
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/server/public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended:false}))
-app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts' }))
+app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/server/views/layouts' }))
 app.set('view engine', 'hbs');
-app.set('views', __dirname + '/views')
+app.set('views', __dirname + '/server/views')
 
 let timer = 0
 const data = {
