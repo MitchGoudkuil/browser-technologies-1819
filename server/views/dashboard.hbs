@@ -1,0 +1,37 @@
+<article class="notification-live {{ matchStart }}">
+  <small class="notification-live__tag">Now playing</small>
+  <p>{{ yourTeam.name }} 0 - 0 {{ oponentTeam.name }}</p>
+  <p class="notification-live__timer"> {{ timer }}</p>
+</article>
+
+<h1 class="dashboard-title">Dashboard</h1>
+
+<article class="notification ">
+  <img src="../img/goal.svg" alt="">
+  <div class="notification__info">
+    <h2>Goal! </h2>
+    <h4>{{ timer }} - Hakim Zijech</h4>
+    <p>{{ yourTeam.name }} 1 - 0 {{ oponentTeam.name }}</p>
+  </div>
+</article>
+
+<article class="halftime-notification ">
+  <img src="../img/start.svg" alt="">
+  <div class="notification__info">
+    <h2>HALF-TIME!</h2>
+    <h4>The game between {{ yourTeam.name }} and {{ oponentTeam.name }} paused.</h4>
+    <p>{{ yourTeam.name }} 1 - 0 {{ oponentTeam.name }}</p>
+  </div>
+</article>
+
+<section class="team-container">
+  {{#each teams }}
+    <article class="team-container__card">
+      <img class="team-container__logo" src="{{this.teamLogo}}" alt="{{this.name}} logo">
+      <h2>{{this.name}}</h2>
+      <a href="/dashboard/{{this.name}}" class="button" type="button" name="button">Open {{this.name}}</a>
+    </article>
+  {{/each}}
+</section>
+
+<script type="text/javascript" src="./js/main.js"></script>

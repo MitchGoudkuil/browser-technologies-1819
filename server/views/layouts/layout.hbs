@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Add your favorite club to the dashboard and receive notifications when they’re playing.">
+    <title>My club - Your soccer notification app</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <noscript>
+      <meta http-equiv="refresh" content="10">
+    </noscript>
+  </head>
+  <body>
+    <header>
+      <a href="/dashboard"><img class="logo" src="../img/logo.svg" alt="Myclub logo"></a>
+      {{# if addButton }}<a href="/" class="add-button"><img src="../img/plus-button.svg" alt="">Add team</a>{{/if}}
+    </header>
+
+    <main class="content-container">
+        {{{ body }}}
+    </main>
+  </body>
+
+  <script src="/js/client.js"></script>
+
+</html>
