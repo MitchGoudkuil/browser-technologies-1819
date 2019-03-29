@@ -1,8 +1,7 @@
 <section class="select-team">
   <form id="teamselection" action="/dashboard" method="post">
     <h1>Let's select your favorite team.</h1>
-    <select class="" name="team" form="teamselection">
-        <option value=""></option>
+    <select class="" name="team" form="teamselection" required>
       {{#each teamList }}
         <option value="{{this.id}}">{{this.name}}</option>
       {{/each}}
