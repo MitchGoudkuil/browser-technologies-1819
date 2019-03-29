@@ -1,20 +1,20 @@
-let checkInterval = setInterval(checkNotifications, 1000);
-let showOnce = false
-let showSecondOnce = false
+var checkInterval = setInterval(checkNotifications, 1000);
+var showOnce = false
+var showSecondOnce = false
 async function checkNotifications() {
   console.log('check voor notificatie');
 
-  let data = await fetch('http://localhost:3000/checkNotification')
+  var data = await fetch('http://localhost:3000/checkNotification')
 
   data = await data.json()
 
-  const liveNotification = document.querySelector('.notification-live');
+  var liveNotification = document.querySelector('.notification-live');
   if (data.liveNotification === true) {
     liveNotification.classList.remove("hide")
     liveNotification.classList.add("show")
   }
 
-  const notification = document.querySelector('.notification');
+  var notification = document.querySelector('.notification');
   if (data.notification === true && showOnce === false) {
     notification.classList.add("goal")
     setTimeout(function() {
@@ -24,7 +24,7 @@ async function checkNotifications() {
     showOnce = true
   }
 
-  const halfTimeNotification = document.querySelector('.halftime-notification');
+  var halfTimeNotification = document.querySelector('.halftime-notification');
   if (data.halfTimeNotification === true && showSecondOnce === false) {
     halfTimeNotification.classList.add("goal")
     setTimeout(function() {
