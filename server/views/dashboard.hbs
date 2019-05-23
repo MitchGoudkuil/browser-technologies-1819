@@ -1,12 +1,12 @@
-<article class="notification-live {{ matchStart }}">
+<article id="live" class="notification-live {{ matchStart }}">
   <small class="notification-live__tag">Now playing</small>
   <p>{{ yourTeam.name }} 0 - 0 {{ oponentTeam.name }}</p>
-  <p class="notification-live__timer"> {{ timer }}</p>
+  <p id="timer" class="notification-live__timer"> {{ timer }}</p>
 </article>
 
 <h1 class="dashboard-title">Dashboard</h1>
 
-<article class="notification ">
+<article id="notification" class="notification ">
   <img src="../img/goal.svg" alt="">
   <div class="notification__info">
     <h2>Goal! </h2>
@@ -15,7 +15,7 @@
   </div>
 </article>
 
-<article class="halftime-notification ">
+<article id="halftimeNotification" class="halftime-notification ">
   <img src="../img/start.svg" alt="">
   <div class="notification__info">
     <h2>HALF-TIME!</h2>
@@ -33,5 +33,4 @@
     </article>
   {{/each}}
 </section>
-
 <script type="text/javascript" src="./js/main.js"></script>

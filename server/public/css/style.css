@@ -1,106 +1,143 @@
 body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #27282C; }
+  background-color: #27282c;
+}
 
 header {
   background-color: #303339;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   -webkit-box-shadow: 0px 5px 5px -1px rgba(0, 0, 0, 0.18);
   -moz-box-shadow: 0px 5px 5px -1px rgba(0, 0, 0, 0.18);
-  box-shadow: 0px 5px 5px -1px rgba(0, 0, 0, 0.18); }
+  box-shadow: 0px 5px 5px -1px rgba(0, 0, 0, 0.18);
+}
 
 button {
   display: block;
-  border: none; }
+  border: none;
+}
 
 h1 {
-  color: #fff; }
+  color: #fff;
+}
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 @supports not (display: grid) {
   .team-container {
-    display: inline-block; } }
+    display: inline-block;
+  }
+}
 @supports not (display: flex) {
-  .addButton, .selection-container, .halftime-notification, .notification, .goal, .notification-live, .select-team, .show {
-    display: inline-block; } }
+  .addButton,
+  .selection-container,
+  .halftime-notification,
+  .notification,
+  .goal,
+  .notification-live,
+  .select-team,
+  .show {
+    display: inline-block;
+  }
+}
 .add-button {
   color: #fff;
   text-decoration: none;
-  background-color: #E27854;
-  padding: .5em 1em;
+  background-color: #e27854;
+  padding: 0.5em 1em;
   display: flex;
   align-items: center;
   cursor: pointer;
-  transition: .3s; }
-  .add-button:hover {
-    background-color: #B55E4D; }
-  .add-button:active {
-    background-color: #B55E4D; }
-  .add-button img {
-    width: 10px;
-    margin-right: .4em; }
+  transition: 0.3s;
+}
+.add-button:hover {
+  background-color: #b55e4d;
+}
+.add-button:active {
+  background-color: #b55e4d;
+}
+.add-button img {
+  width: 10px;
+  margin-right: 0.4em;
+}
 
 .logo {
-  width: 150px; }
+  width: 150px;
+}
 
 .content-container {
+  height: 90vh;
   position: relative;
-  padding: 1em; }
+  padding: 1em;
+}
 
 .dashboard-title {
-  margin-bottom: .5em; }
+  margin-bottom: 0.5em;
+}
 
 .button {
   display: block;
-  background-color: #E27854;
+  background-color: #e27854;
   color: #fff;
   border: none;
   border-radius: none;
   padding: 1em 3em;
   margin-top: 1em;
-  transition: 300ms; }
-  .button:hover {
-    background-color: #844836; }
-  .button:active {
-    background-color: #B55E4D; }
+  transition: 300ms;
+}
+.button:hover {
+  background-color: #844836;
+}
+.button:active {
+  background-color: #b55e4d;
+}
 
 .selection-container {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+}
 
 .team-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-column-gap: 1em;
-  grid-row-gap: 1em; }
-  .team-container__card {
-    text-align: center;
-    background-color: #303339;
-    color: #fff;
-    -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
-    -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
-    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
-    padding: 2em 1em 1em;
-    position: relative; }
-  .team-container__logo {
-    max-width: 200px;
-    width: 100%;
-    max-height: 200px;
-    height: 100%;
-    border-radius: 100%; }
+  grid-row-gap: 1em;
+}
+.team-container__card {
+  text-align: center;
+  background-color: #303339;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
+  padding: 2em 1em 1em;
+  position: relative;
+}
+.team-container__logo {
+  max-width: 200px;
+  width: 100%;
+  max-height: 200px;
+  height: 100%;
+  border-radius: 100%;
+}
 
 .halftime-notification {
   position: fixed;
@@ -114,12 +151,15 @@ a {
   -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
   box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
-  transition: .6s;
-  opacity: 0; }
-  .halftime-notification img {
-    height: 150px; }
-  .halftime-notification__info {
-    padding: 1.5em; }
+  transition: 0.6s;
+  opacity: 0;
+}
+.halftime-notification img {
+  height: 150px;
+}
+.halftime-notification__info {
+  padding: 1.5em;
+}
 
 .notification {
   position: fixed;
@@ -133,64 +173,94 @@ a {
   -webkit-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
   box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.14);
-  transition: .6s;
-  opacity: 0; }
-  .notification img {
-    height: 150px; }
-  .notification__info {
-    padding: 1.5em; }
+  transition: 0.6s;
+  opacity: 0;
+}
+.notification img {
+  height: 150px;
+}
+.notification__info {
+  padding: 1.5em;
+}
 
 .goal {
   display: flex;
   opacity: 1;
-  bottom: 1em; }
+  bottom: 1em;
+}
+
+#refresh {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+#refresh label {
+  margin-bottom: 0.4em;
+  color: #fff;
+}
+
+.show-refresh {
+  display: block;
+}
 
 .nogoal {
   opacity: 1;
   bottom: 1em;
-  display: none; }
+  display: none;
+}
 
 .notification-live {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #E27854;
-  margin-bottom: 1em; }
-  .notification-live__tag {
-    padding: .5em .9em;
-    background-color: red;
-    color: #fff;
-    margin-right: 1em; }
-  .notification-live__timer {
-    margin-left: 1em; }
+  background-color: #e27854;
+  margin-bottom: 1em;
+}
+.notification-live__tag {
+  padding: 0.5em 0.9em;
+  background-color: red;
+  color: #fff;
+  margin-right: 1em;
+}
+.notification-live__timer {
+  margin-left: 1em;
+}
 
 .select-team {
   width: 100vw;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+}
 
 @media (min-width: 1025px) and (max-width: 1900px) {
   .team-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr; }
-    .team-container__logo {
-      max-width: 200px;
-      width: 100%;
-      max-height: 200px;
-      height: 100%; }
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .team-container__logo {
+    max-width: 200px;
+    width: 100%;
+    max-height: 200px;
+    height: 100%;
+  }
 
   .select-team {
     width: 100vw;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center; } }
+    justify-content: center;
+  }
+}
 .show {
-  display: flex; }
+  display: flex;
+}
 
 .hide {
-  display: none; }
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */

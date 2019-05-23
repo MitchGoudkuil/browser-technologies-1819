@@ -2,19 +2,19 @@ var checkInterval = setInterval(checkNotifications, 1000);
 var showOnce = false
 var showSecondOnce = false
 async function checkNotifications() {
-  console.log('check voor notificatie');
-
   var data = await fetch('http://localhost:3000/checkNotification')
+
+  var liveNotification = document.getElementById('notification-live');
+  var notification = document.getElementById('notification');
+  var halfTimeNotification = document.getElementById('halftime-notification');
 
   data = await data.json()
 
-  var liveNotification = document.querySelector('.notification-live');
   if (data.liveNotification === true) {
     liveNotification.classList.remove("hide")
     liveNotification.classList.add("show")
   }
 
-  var notification = document.querySelector('.notification');
   if (data.notification === true && showOnce === false) {
     notification.classList.add("goal")
     setTimeout(function() {
@@ -24,7 +24,6 @@ async function checkNotifications() {
     showOnce = true
   }
 
-  var halfTimeNotification = document.querySelector('.halftime-notification');
   if (data.halfTimeNotification === true && showSecondOnce === false) {
     halfTimeNotification.classList.add("goal")
     setTimeout(function() {
